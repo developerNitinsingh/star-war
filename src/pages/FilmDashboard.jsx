@@ -19,15 +19,15 @@ function FilmDashboard() {
   return (
     <>
       <Header search={<Search />} />
-      <div className="flex px-5 sm:px-5 gap-6 bg-[#03123D]">
+      <div className="flex px-5 sm:px-5 gap-6 bg-[#03123D] ">
         <div className="">
           <SideBar />
         </div>
 
-        <div className="">
+        <div className="flex flex-col justify-center items-center w-full ">
           <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
             <p className="">Film</p>
-            <div className="flex border  h-[32px] gap-3 pr-1">
+            <div className="flex border h-[32px] gap-3 pr-1">
               <NavLink
                 to="/film"
                 className={({ isActive }) =>
@@ -73,7 +73,7 @@ function FilmDashboard() {
             {movieDetails.map((filmDetail) => (
               <div
                 key={filmDetail.episode_id}
-                className="w-[100%] sm:w-[40%] lg:w-[30%]"
+                className="w-[100%] sm:w-[40%] lg:w-[30%] mb-5"
               >
                 <Card
                   movieDetail={filmDetail}
