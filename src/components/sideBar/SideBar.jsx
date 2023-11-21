@@ -64,7 +64,7 @@ function SideBar() {
             <img src={folder} alt="" />
             <p className="hidden sm:block ">Films</p>
           </div>
-          <img src={careright} alt="" className="rotate-90" />
+          <img src={careright} alt="" className="rotate-90 hover:rotate-180" />
         </div>
         <NavLink
           to="/film"
@@ -80,7 +80,11 @@ function SideBar() {
               <img src={folder} alt="" />
               <p className="">Movies</p>
             </div>
-            <img src={careright} alt="" className="rotate-90" />
+            <img
+              src={careright}
+              alt=""
+              className="rotate-90 hover:rotate-180"
+            />
           </div>
         </NavLink>
       </div>
@@ -96,7 +100,7 @@ function SideBar() {
             <img src={folder} alt="" />
             <p className="hidden sm:block">People</p>
           </div>
-          <img src={careright} alt="" className="rotate-90" />
+          <img src={careright} alt="" className="rotate-90 hover:rotate-180" />
         </div>
         <NavLink
           to="/people"
@@ -112,7 +116,11 @@ function SideBar() {
               <img src={folder} alt="" />
               <p className="">People</p>
             </div>
-            <img src={careright} alt="" className="rotate-90" />
+            <img
+              src={careright}
+              alt=""
+              className="rotate-90 hover:rotate-180"
+            />
           </div>
         </NavLink>
       </div>
@@ -128,19 +136,29 @@ function SideBar() {
             <img src={folder} alt="" />
             <p className="hidden sm:block">Planets</p>
           </div>
-          <img src={careright} alt="" className="rotate-90" />
+          <img src={careright} alt="" className="rotate-90 hover:rotate-180" />
         </div>
-
-        <div
-          className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
-          style={movieStyle3}
+        <NavLink
+          to="/planet"
+          className={({ isActive }) =>
+            `${isActive ? "bg-[#F9FAFD33]" : "bg-[#03123D]"}`
+          }
         >
-          <div className="flex ml-3 gap-1">
-            <img src={folder} alt="" />
-            <p className="">Planet</p>
+          <div
+            className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
+            style={movieStyle3}
+          >
+            <div className="flex ml-3 gap-1">
+              <img src={folder} alt="" />
+              <p className="">Planet</p>
+            </div>
+            <img
+              src={careright}
+              alt=""
+              className="rotate-90 hover:rotate-180"
+            />
           </div>
-          <img src={careright} alt="" className="rotate-90" />
-        </div>
+        </NavLink>
       </div>
 
       {/* 4th */}
@@ -154,19 +172,29 @@ function SideBar() {
             <img src={folder} alt="" />
             <p className="hidden sm:block">Species</p>
           </div>
-          <img src={careright} alt="" className="rotate-90" />
+          <img src={careright} alt="" className="rotate-90 hover:rotate-180" />
         </div>
-
-        <div
-          className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
-          style={movieStyle4}
+        <NavLink
+          to="/species"
+          className={({ isActive }) =>
+            `${isActive ? "bg-[#F9FAFD33]" : "bg-[#03123D]"}`
+          }
         >
-          <div className="flex ml-3 gap-1">
-            <img src={folder} alt="" />
-            <p className="">Species</p>
+          <div
+            className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
+            style={movieStyle4}
+          >
+            <div className="flex ml-3 gap-1">
+              <img src={folder} alt="" />
+              <p className="">Species</p>
+            </div>
+            <img
+              src={careright}
+              alt=""
+              className="rotate-90 hover:rotate-180"
+            />
           </div>
-          <img src={careright} alt="" className="rotate-90" />
-        </div>
+        </NavLink>
       </div>
 
       {/* 5th */}
@@ -182,17 +210,27 @@ function SideBar() {
           </div>
           <img src={careright} alt="" className="rotate-90" />
         </div>
-
-        <div
-          className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
-          style={movieStyle5}
+        <NavLink
+          to="/starship"
+          className={({ isActive }) =>
+            `${isActive ? "bg-[#F9FAFD33]" : "bg-[#03123D]"}`
+          }
         >
-          <div className="flex ml-3 gap-1">
-            <img src={folder} alt="" />
-            <p className="">Starship</p>
+          <div
+            className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md"
+            style={movieStyle5}
+          >
+            <div className="flex ml-3 gap-1">
+              <img src={folder} alt="" />
+              <p className="">Starship</p>
+            </div>
+            <img
+              src={careright}
+              alt=""
+              className="rotate-90 hover:rotate-180"
+            />
           </div>
-          <img src={careright} alt="" className="rotate-90" />
-        </div>
+        </NavLink>
       </div>
 
       {/* 6th */}
@@ -206,19 +244,25 @@ function SideBar() {
             <img src={folder} alt="" />
             <p className="hidden sm:block">Vehicles</p>
           </div>
-          <img src={careright} alt="" className="rotate-90" />
+          <img src={careright} alt="" className="rotate-90 hover:rotate-180" />
         </div>
-
-        <div
-          className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md "
-          style={movieStyle6}
+        <NavLink
+          to="/vehicles"
+          className={({ isActive }) =>
+            `${isActive ? "bg-[#F9FAFD33]" : "bg-[#03123D]"}`
+          }
         >
-          <div className="flex ml-3 gap-1">
-            <img src={folder} alt="" />
-            <p className="text-">Vehicles</p>
+          <div
+            className="flex justify-between hover:bg-[#CB1A80] p-2 rounded-md "
+            style={movieStyle6}
+          >
+            <div className="flex ml-3 gap-1">
+              <img src={folder} alt="" />
+              <p className="text-">Vehicles</p>
+            </div>
+            <img src={careright} alt="" className="rotate-90" />
           </div>
-          <img src={careright} alt="" className="rotate-90" />
-        </div>
+        </NavLink>
       </div>
     </div>
   );

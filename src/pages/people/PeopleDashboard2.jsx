@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import Search from "../../components/header/Search";
 import { alien, grid, list } from "../../assets/icons";
 import Card from "../../components/card/Card";
+import { NavLink } from "react-router-dom";
 
 function PeopleDashboard2() {
   const [PeopleDetails, setPeopleDetails] = useState([]);
@@ -26,15 +27,43 @@ function PeopleDashboard2() {
         <div className="">
           <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
             <p className="">Film</p>
-            <div className="flex border  h-[32px] gap-3 pr-1">
-              <div className="flex items-center">
-                <img src={grid} alt="" />
-                <label htmlFor="">Grid</label>
-              </div>
-              <div className="flex items-center">
-                <img src={list} alt="" />
-                <label htmlFor="">List</label>
-              </div>
+            <div className="flex border  h-[32px] gap-3 ">
+              <NavLink
+                to="/people2"
+                className={({ isActive }) =>
+                  `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                }
+              >
+                <div className="flex items-center pt-1">
+                  <img src={grid} alt="" />
+                  <label
+                    htmlFor=""
+                    className={({ isActive }) => {
+                      `${isActive ? "block" : "hidden"} text-black`;
+                    }}
+                  >
+                    Grid
+                  </label>
+                </div>
+              </NavLink>
+              <NavLink
+                to="/people"
+                className={({ isActive }) =>
+                  `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                }
+              >
+                <div className="flex items-center pt-1">
+                  <img src={list} alt="" />
+                  <label
+                    htmlFor=""
+                    className={({ isActive }) => {
+                      `${isActive ? "block" : "hidden"} text-black`;
+                    }}
+                  >
+                    List
+                  </label>
+                </div>
+              </NavLink>
             </div>
           </div>
 

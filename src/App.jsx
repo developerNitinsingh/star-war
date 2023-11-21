@@ -16,6 +16,8 @@ import Species2 from "./pages/species/Species2";
 import Starship1 from "./pages/starship/Starship1";
 import Vehicles1 from "./pages/vehicles/Vehicles1";
 import Card from "./components/card/Card";
+import Starship2 from "./pages/starship/Starship2";
+import Vehicles2 from "./pages/vehicles/Vehicles2";
 
 function App() {
   return (
@@ -28,6 +30,12 @@ function App() {
         <Route path="/species" element={<Species1 />} />
         <Route path="/starship" element={<Starship1 />} />
         <Route path="/vehicles" element={<Vehicles1 />} />
+
+        <Route path="/vehicles2" element={<Vehicles2 />} />
+        <Route path="/starship2" element={<Starship2 />} />
+        <Route path="/species2" element={<Species2 />} />
+        <Route path="/planet2" element={<Planetdashboard2 />} />
+        <Route path="/film2" element={<FilmDashboard2 />} />
         <Route path="/people2" element={<PeopleDashboard2 />} />
       </Routes>
     </BrowserRouter>

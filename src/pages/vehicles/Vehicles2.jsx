@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import Search from "../../components/header/Search";
 import { alien, grid, list, planet } from "../../assets/icons";
 import Card from "../../components/card/Card";
+import { NavLink } from "react-router-dom";
 
 function Vehicles2() {
   const [PeopleDetails, setPeopleDetails] = useState([]);
@@ -27,14 +28,42 @@ function Vehicles2() {
           <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
             <p className="">Vehicles</p>
             <div className="flex border  h-[32px] gap-3 pr-1">
-              <div className="flex items-center">
-                <img src={grid} alt="" />
-                <label htmlFor="">Grid</label>
-              </div>
-              <div className="flex items-center">
-                <img src={list} alt="" />
-                <label htmlFor="">List</label>
-              </div>
+              <NavLink
+                to="/vehicles2"
+                className={({ isActive }) =>
+                  `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                }
+              >
+                <div className="flex items-center pt-1">
+                  <img src={grid} alt="" />
+                  <label
+                    htmlFor=""
+                    className={({ isActive }) =>
+                      `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                    }
+                  >
+                    Grid
+                  </label>
+                </div>
+              </NavLink>
+              <NavLink
+                to="/vehicles"
+                className={({ isActive }) =>
+                  `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                }
+              >
+                <div className="flex items-center pt-1">
+                  <img src={list} alt="" className="text-black" />
+                  <label
+                    htmlFor=""
+                    className={({ isActive }) =>
+                      `${isActive ? "bg-white" : "bg-[#03123D]"}`
+                    }
+                  >
+                    List
+                  </label>
+                </div>
+              </NavLink>
             </div>
           </div>
 
