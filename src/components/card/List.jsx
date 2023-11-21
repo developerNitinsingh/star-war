@@ -58,7 +58,7 @@ function List({ listDetail, first, second, third }) {
         <p className="">{first}</p>
         <p className="">{second}</p>
         <p className="">{third}</p>
-        <img src={more} alt="" className="" />
+        <img src={more} alt="" className="" onClick={openblock} />
       </div>
       <div className="w-full bg-[#03123D] px-5  " style={newStyles}>
         <div className="flex justify-between  border-b py-1">

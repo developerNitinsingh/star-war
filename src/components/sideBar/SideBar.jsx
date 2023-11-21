@@ -1,5 +1,14 @@
 import React, { useRef, useState } from "react";
-import { folder, careright } from "../../assets/icons";
+import {
+  folder,
+  careright,
+  car,
+  rocketlaunch,
+  alien,
+  planet,
+  film,
+  user,
+} from "../../assets/icons";
 import { NavLink, Link } from "react-router-dom";
 
 function SideBar() {
@@ -77,8 +86,8 @@ function SideBar() {
             style={movieStyle1}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="">Movies</p>
+              <img src={film} alt="" />
+              <p className="hidden sm:block">Movies</p>
             </div>
             <img
               src={careright}
@@ -113,8 +122,8 @@ function SideBar() {
             style={movieStyle2}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="">People</p>
+              <img src={user} alt="" />
+              <p className="hidden sm:block">People</p>
             </div>
             <img
               src={careright}
@@ -149,8 +158,8 @@ function SideBar() {
             style={movieStyle3}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="">Planet</p>
+              <img src={planet} alt="" />
+              <p className="hidden sm:block">Planet</p>
             </div>
             <img
               src={careright}
@@ -185,8 +194,8 @@ function SideBar() {
             style={movieStyle4}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="">Species</p>
+              <img src={alien} alt="" />
+              <p className="hidden sm:block">Species</p>
             </div>
             <img
               src={careright}
@@ -221,8 +230,8 @@ function SideBar() {
             style={movieStyle5}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="">Starship</p>
+              <img src={rocketlaunch} alt="" />
+              <p className="hidden sm:block">Starship</p>
             </div>
             <img
               src={careright}
@@ -257,8 +266,8 @@ function SideBar() {
             style={movieStyle6}
           >
             <div className="flex ml-3 gap-1">
-              <img src={folder} alt="" />
-              <p className="text-">Vehicles</p>
+              <img src={car} alt="" />
+              <p className="hidden sm:block">Vehicles</p>
             </div>
             <img src={careright} alt="" className="rotate-90" />
           </div>
