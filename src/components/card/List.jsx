@@ -50,14 +50,17 @@ function List({ listDetail, first, second, third }) {
     }
   };
   return (
-    <div className="">
-      <div
-        className="text-white flex justify-between w-full border-b p-2 text-xs sm:text-sm"
-        onClick={clickEvent}
-      >
-        <p className="">{first}</p>
-        <p className="">{second}</p>
-        <p className="">{third}</p>
+    <div className=" ">
+      <div className="text-white flex justify-between w-full border-b p-2 text-xs sm:text-sm ">
+        <p className="" onClick={clickEvent}>
+          {first}
+        </p>
+        <p className="" onClick={clickEvent}>
+          {second}
+        </p>
+        <p className="" onClick={clickEvent}>
+          {third}
+        </p>
         <img src={more} alt="" className="" onClick={openblock} />
       </div>
       <div className="w-full bg-[#03123D] px-5  " style={newStyles}>
@@ -144,7 +147,7 @@ function List({ listDetail, first, second, third }) {
       {/* ++++++++++++++++ */}
 
       <div
-        className="w-[400px]  bg-white p-6 text-black absolute z-[999] h-[248px] "
+        className="w-[200px]  sm:w-[300px] bg-white p-6 text-black absolute z-[999] h-[248px] "
         style={deleteBox}
       >
         <div className="">

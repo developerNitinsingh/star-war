@@ -25,7 +25,7 @@ function FilmDashboard() {
         </div>
 
         <div className="">
-          <div className="flex justify-between w-[calc(100vw-273px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
+          <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
             <p className="">Film</p>
             <div className="flex border  h-[32px] gap-3 pr-1">
               <NavLink

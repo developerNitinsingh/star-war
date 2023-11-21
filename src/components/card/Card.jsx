@@ -149,7 +149,7 @@ function Card({ movieDetail, img, first }) {
       {/* ++++++++++++++++ */}
 
       <div
-        className="w-[400px]  bg-white p-6 text-black absolute z-[999] h-[248px] "
+        className="w-[200px] sm:w-[300px]  bg-white p-6 text-black absolute z-[999] h-[248px] "
         style={deleteBox}
       >
         <div className="">
