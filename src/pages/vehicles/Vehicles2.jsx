@@ -8,13 +8,15 @@ import { NavLink } from "react-router-dom";
 
 function Vehicles2() {
   const [PeopleDetails, setPeopleDetails] = useState([]);
+
   useEffect(() => {
-    fetch("https://swapi.dev/api/vehicles/")
-      .then((response) => response.json())
-      .then((data) => {
-        setPeopleDetails(data.results);
-      });
-  });
+    async function fetchApi() {
+      let response = await fetch("https://swapi.dev/api/vehicles/");
+      response = await response.json();
+      setPeopleDetails(response.results);
+    }
+    fetchApi();
+  }, []);
 
   return (
     <>

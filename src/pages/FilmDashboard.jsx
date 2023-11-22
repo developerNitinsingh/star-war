@@ -5,29 +5,31 @@ import Search from "../components/header/Search";
 import { film, grid, list } from "../assets/icons";
 import Card from "../components/card/Card";
 import { NavLink } from "react-router-dom";
+import { data } from "autoprefixer";
 
 function FilmDashboard() {
   const [movieDetails, setMovieDetails] = useState([]);
   useEffect(() => {
-    fetch("https://swapi.dev/api/films/")
-      .then((response) => response.json())
-      .then((data) => {
-        setMovieDetails(data.results);
-      });
-  });
+    async function fetchApi() {
+      let response = await fetch("https://swapi.dev/api/films");
+      response = await response.json();
+      setMovieDetails(response.results);
+    }
+    fetchApi();
+  }, []);
 
   return (
     <>
       <Header search={<Search />} />
-      <div className="flex px-5 sm:px-5 gap-6 bg-[#03123D] ">
+      <div className="flex justify-between gap-6 bg-[#03123D] mr-2 sm:mr-5">
         <div className="">
           <SideBar />
         </div>
 
-        <div className="flex flex-col justify-center items-center w-full ">
-          <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
+        <div className="flex flex-col  justify-between  w-[80vw]">
+          <div className="flex justify-between  text-white  mb-4 flex-1">
             <p className="">Film</p>
-            <div className="flex border h-[32px] gap-3 pr-1">
+            <div className="flex border h-[32px] gap-3 pr-1 text-xs">
               <NavLink
                 to="/film"
                 className={({ isActive }) =>
@@ -38,9 +40,9 @@ function FilmDashboard() {
                   <img src={grid} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     Grid
                   </label>
@@ -57,9 +59,9 @@ function FilmDashboard() {
                   <img src={list} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     List
                   </label>
@@ -73,7 +75,7 @@ function FilmDashboard() {
             {movieDetails.map((filmDetail) => (
               <div
                 key={filmDetail.episode_id}
-                className="w-[100%] sm:w-[40%] lg:w-[30%] mb-5"
+                className="w-[100%]  lg:w-[30%] mb-5"
               >
                 <Card
                   movieDetail={filmDetail}

@@ -8,23 +8,26 @@ import { NavLink } from "react-router-dom";
 
 function Species1() {
   const [ListDetails, setListDetails] = useState([]);
+
   useEffect(() => {
-    fetch("https://swapi.dev/api/species/")
-      .then((response) => response.json())
-      .then((data) => {
-        setListDetails(data.results);
-      });
-  });
+    async function fetchApi() {
+      let response = await fetch("https://swapi.dev/api/species/");
+      response = await response.json();
+      setListDetails(response.results);
+    }
+    fetchApi();
+  }, []);
+
   return (
     <>
       <Header search={<Search />} />
-      <div className="flex px-5 sm:px-5 gap-6 bg-[#03123D]">
+      <div className="flex justify-between gap-6 bg-[#03123D] mr-2 sm:mr-5">
         <div className="">
           <SideBar />
         </div>
 
-        <div className="">
-          <div className="flex justify-between w-[calc(100vw-150px)] sm:w-[calc(100vw-273px)] text-white items-center mb-4">
+        <div className="w-[80vw]">
+          <div className="flex justify-between  text-white  mb-4 flex-1">
             <p className="">Species</p>
             <div className="flex border  h-[32px] gap-3 ">
               <NavLink
@@ -37,9 +40,9 @@ function Species1() {
                   <img src={grid} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     Grid
                   </label>
@@ -55,9 +58,9 @@ function Species1() {
                   <img src={list} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     List
                   </label>

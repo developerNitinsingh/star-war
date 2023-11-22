@@ -51,19 +51,39 @@ function List({ listDetail, first, second, third }) {
   };
   return (
     <div className=" ">
-      <div className="text-white flex justify-between w-full border-b p-2 text-xs sm:text-sm ">
-        <p className="" onClick={clickEvent}>
-          {first}
-        </p>
-        <p className="" onClick={clickEvent}>
-          {second}
-        </p>
-        <p className="" onClick={clickEvent}>
-          {third}
-        </p>
-        <img src={more} alt="" className="" onClick={openblock} />
+      <div className="text-white flex justify-between w-full border-b p-2 text-xs sm:text-sm gap-3">
+        <div className=" w-[25%]">
+          <p
+            className=" whitespace-nowrap overflow-hidden text-ellipsis max-w-[60px] lg:text-clip lg:overflow-visible lg:whitespace-normal"
+            onClick={clickEvent}
+          >
+            {first}
+          </p>
+        </div>
+        <div className="  w-[25%]">
+          <p
+            className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[60px] lg:text-clip lg:overflow-visible lg:whitespace-normal"
+            onClick={clickEvent}
+          >
+            {second}
+          </p>
+        </div>
+        <div className="  w-[25%]">
+          <p
+            className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[60px] lg:text-clip lg:overflow-visible lg:whitespace-normal"
+            onClick={clickEvent}
+          >
+            {third}
+          </p>
+        </div>
+        <div className="">
+          <img src={more} alt="" className="" onClick={openblock} />
+        </div>
       </div>
-      <div className="w-full bg-[#03123D] px-5  " style={newStyles}>
+
+      {/* ============= */}
+
+      <div className="w-full bg-[#03123D] px-5  text-black" style={newStyles}>
         <div className="flex justify-between  border-b py-1">
           <h1 className="">Movie details</h1>
           <img src={cross} alt="" onClick={closeEvent} />
@@ -78,6 +98,7 @@ function List({ listDetail, first, second, third }) {
             type="text"
             value={first}
             className="rounded-lg  pt-2 pr-3 pl-2 pb-3"
+            readOnly
           />
         </div>
         <div className="flex flex-col">
@@ -87,6 +108,7 @@ function List({ listDetail, first, second, third }) {
             className="rounded-lg px-4 py-4"
             placeholder="opening Crawl"
             value={second}
+            readOnly
           />
         </div>
         <div className="flex flex-col">
@@ -96,6 +118,7 @@ function List({ listDetail, first, second, third }) {
             className="rounded-lg pt-2 pr-3 pl-2 pb-3"
             placeholder="Genere"
             value={third}
+            readOnly
           />
         </div>
         <div

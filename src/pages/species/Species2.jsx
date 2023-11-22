@@ -9,12 +9,13 @@ import { NavLink } from "react-router-dom";
 function Species2() {
   const [PeopleDetails, setPeopleDetails] = useState([]);
   useEffect(() => {
-    fetch("https://swapi.dev/api/species/")
-      .then((response) => response.json())
-      .then((data) => {
-        setPeopleDetails(data.results);
-      });
-  });
+    async function fetchApi() {
+      let response = await fetch("https://swapi.dev/api/species/");
+      response = await response.json();
+      setPeopleDetails(response.results);
+    }
+    fetchApi();
+  }, []);
 
   return (
     <>
@@ -38,9 +39,9 @@ function Species2() {
                   <img src={grid} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     Grid
                   </label>
@@ -56,9 +57,9 @@ function Species2() {
                   <img src={list} alt="" />
                   <label
                     htmlFor=""
-                    className={({ isActive }) => {
-                      `${isActive ? "block" : "hidden"} text-black`;
-                    }}
+                    // className={({ isActive }) => {
+                    //   `${isActive ? "block" : "hidden"} text-black`;
+                    // }}
                   >
                     List
                   </label>

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import { alien } from "./assets/icons";
-import Header from "./components/header/Header";
-import Search from "./components/header/Search";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Search from "./components/header/Search";
+
 import FilmDashboard from "./pages/FilmDashboard";
 import FilmDashboard2 from "./pages/FilmDashboard2";
 import PeopleDashboard2 from "./pages/people/PeopleDashboard2";

@@ -61,7 +61,9 @@ function Card({ movieDetail, img, first }) {
       <div className="rounded-lg bg-[#F9FAFD33] flex justify-between mt-1 py-1 px-2">
         <div className="flex w-[40%] items-center gap-1">
           <img src={img} alt="" className="" />
-          <p className="text-xs">{first}</p>
+          <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis max-w-[60px] lg:text-clip lg:overflow-visible lg:whitespace-normal">
+            {first}
+          </p>
         </div>
         <img src={MenuButton} alt="" onClick={openblock} />
       </div>
@@ -85,6 +87,7 @@ function Card({ movieDetail, img, first }) {
             value={first}
             className="rounded-lg  pt-2 pr-3 pl-2 pb-3"
             placeholder="Title"
+            readOnly
           />
         </div>
         <div className="flex flex-col">
@@ -93,6 +96,7 @@ function Card({ movieDetail, img, first }) {
             type="text"
             className="rounded-lg px-4 py-4"
             placeholder="opening Crawl"
+            readOnly
           />
         </div>
         <div className="flex flex-col">
@@ -101,6 +105,7 @@ function Card({ movieDetail, img, first }) {
             type="text"
             className="rounded-lg pt-2 pr-3 pl-2 pb-3"
             placeholder="Genere"
+            readOnly
           />
         </div>
         <div className=" rounded-lg text-center mt-20 bg-[#CB1A80] w-full text-white">
